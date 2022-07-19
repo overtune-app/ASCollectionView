@@ -63,8 +63,11 @@ struct AppStoreScreen: View
 			.layout(self.layout)
 			.contentInsets(.init(top: 10, left: 0, bottom: 10, right: 0))
 			.shouldAttemptToMaintainScrollPositionOnOrientationChange(maintainPosition: false)
-			.navigationBarTitle("Apps", displayMode: .inline)
+//			.navigationBarTitle("Apps", displayMode: .inline)
 			.edgesIgnoringSafeArea(.all)
+//            .navigationBarHidden(true)
+//            .navigationBarTitle("", displayMode: .inline)
+//            .navigationBarBackButtonHidden(true)
 	}
 
 	func onCellEvent(_ event: CellEvent<App>, sectionID: Int)

@@ -17,11 +17,17 @@ struct MainView: View
 						Image(systemName: "1.square.fill")
 						Text("Photo grid (with edit mode, selection)")
 					}
-					NavigationLink(destination: AppStoreScreen())
+					NavigationLink(destination:
+                        AppStoreScreen()
+                    )
 					{
 						Image(systemName: "2.square.fill")
 						Text("App Store Layout")
 					}
+                    .navigationBarHidden(true)
+                    .navigationBarTitle("", displayMode: .inline)
+                    .navigationBarBackButtonHidden(true)
+                    
 					NavigationLink(destination: TagsScreen())
 					{
 						Image(systemName: "3.square.fill")
@@ -59,9 +65,14 @@ struct MainView: View
 					}
 				}
 			}
-			.navigationBarTitle("Demo App")
+//			.navigationBarTitle("Demo App")
+            .navigationTitle("")
+            .navigationBarHidden(true)
+            .navigationViewStyle(.stack)
+            .navigationBarTitleDisplayMode(.inline)
 		}
 		.navigationViewStyle(StackNavigationViewStyle())
+        
 	}
 }
 

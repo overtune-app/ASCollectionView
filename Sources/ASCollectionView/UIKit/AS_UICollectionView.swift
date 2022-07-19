@@ -44,6 +44,30 @@ public class AS_CollectionViewController: UIViewController
 		view.backgroundColor = .clear
 	}
 
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        print("NAVIGATION CONTROLLER: \(navigationController)")
+//        print("NAVIGATION CONTROLLER: \(navigationController?.isNavigationBarHidden)")
+        
+        navigationController?.navigationBar.isOpaque = true
+        navigationController?.isNavigationBarHidden = true
+        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.alpha = 0.0
+        
+//        navigationController?.navigationBar.addObserver(self, forKeyPath: "alpha", options: .new, context: nil)
+        navigationController?.navigationBar.addObserver(self, forKeyPath: "alpha", options: .new, context: nil)
+    }
+    
+    
+    public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if let navigationBar = object as? UINavigationBar {
+            navigationBar.isHidden = true
+        }else {
+            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
+        }
+    }
+    
+
 	override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator)
 	{
 		// Get current central cell

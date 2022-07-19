@@ -15,7 +15,11 @@ class ASCollectionViewDecoration<Content: Decoration>: ASCollectionViewSupplemen
 {
 	override init(frame: CGRect)
 	{
-		super.init(frame: frame)
+        if(frame.width == .infinity || frame.height == .infinity){
+            super.init(frame: CGRect(origin: frame.origin, size: .zero))
+        }else{
+            super.init(frame: frame)
+        }		
 		setContent(supplementaryID: ASSupplementaryCellID(sectionIDHash: 0, supplementaryKind: "Decoration"), content: Content())
 	}
 }
