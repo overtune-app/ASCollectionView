@@ -50,7 +50,7 @@ public class AS_CollectionViewController: UIViewController
 //        print("NAVIGATION CONTROLLER: \(navigationController?.isNavigationBarHidden)")
         
         navigationController?.navigationBar.isOpaque = true
-        navigationController?.isNavigationBarHidden = true
+//        navigationController?.isNavigationBarHidden = true
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.alpha = 0.0
         
