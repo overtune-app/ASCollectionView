@@ -52,7 +52,7 @@ public class AS_CollectionViewController: UIViewController
         navigationController?.navigationBar.isOpaque = true
 //        navigationController?.isNavigationBarHidden = true
         navigationController?.navigationBar.isHidden = true
-        navigationController?.navigationBar.alpha = 0.0
+//        navigationController?.navigationBar.alpha = 0.0
         
 //        navigationController?.navigationBar.addObserver(self, forKeyPath: "alpha", options: .new, context: nil)
         navigationController?.navigationBar.addObserver(self, forKeyPath: "alpha", options: .new, context: nil)
